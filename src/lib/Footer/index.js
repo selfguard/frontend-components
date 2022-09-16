@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Navbar() {
     let apiURL = "https://selfguard.xyz/api";
     let securedocURL = "https://demo-filestorage.selfguard.xyz";

@@ -1,6 +1,7 @@
 import SelfGuard from 'selfguard-client';
 import axios from "axios";
 import Session from "supertokens-auth-react/recipe/session";
+import React from 'react';
 import {style} from './style';
 Session.addAxiosInterceptors(axios);
 let api_key = process.env.REACT_APP_SELFGUARD_API_KEY;

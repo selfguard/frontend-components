@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { signOut } from "supertokens-auth-react/recipe/emailpassword";
 
 export default function Logout() {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useSessionContext } from 'supertokens-auth-react/recipe/session';
 import Logout from './logout';
 
