@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Navbar;
 
+var _react = _interopRequireDefault(require("react"));
+
 var _session = require("supertokens-auth-react/recipe/session");
 
 var _logout = _interopRequireDefault(require("./logout"));
@@ -19,30 +21,30 @@ function Navbar() {
   let paymentURL = 'https://demo-payments.selfguard.xyz'; // let messagingURL = 'https://demo-messaging.selfguard.xyz';
 
   let notificationsURL = 'https://demo-notifications.selfguard.xyz';
-  return /*#__PURE__*/React.createElement("nav", {
+  return /*#__PURE__*/_react.default.createElement("nav", {
     className: "navbar sticky-top navbar-dark navbar-expand-lg bg-dark",
     style: {
       marginBottom: '20px',
       borderBottom: '1px solid grey'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "container-fluid"
-  }, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/_react.default.createElement("a", {
     href: "https://selfguard.xyz/home",
     className: "navbar-brand mb-0 h1 vertical"
-  }, /*#__PURE__*/React.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: "/logo3.png",
     width: "30",
     height: "30",
     className: "d-inline-block",
     alt: ""
-  }), /*#__PURE__*/React.createElement("p", {
+  }), /*#__PURE__*/_react.default.createElement("p", {
     className: "d-inline-block",
     style: {
       margin: 0,
       marginLeft: '5px'
     }
-  }, "SelfGuard")), /*#__PURE__*/React.createElement("button", {
+  }, "SelfGuard")), /*#__PURE__*/_react.default.createElement("button", {
     className: "navbar-toggler",
     type: "button",
     "data-bs-toggle": "collapse",
@@ -50,75 +52,75 @@ function Navbar() {
     "aria-controls": "navbarSupportedContent",
     "aria-expanded": "false",
     "aria-label": "Toggle navigation"
-  }, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "navbar-toggler-icon"
-  })), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: "collapse navbar-collapse",
     id: "navbarSupportedContent"
-  }, /*#__PURE__*/React.createElement("ul", {
+  }, /*#__PURE__*/_react.default.createElement("ul", {
     className: "navbar-nav me-auto mb-2 mb-lg-0"
-  }, /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement("li", {
     className: "nav-item"
-  }, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/_react.default.createElement("a", {
     className: "nav-link ".concat('/api' === window.location.pathname && 'active'),
     href: apiURL
-  }, "API")), /*#__PURE__*/React.createElement("li", {
+  }, "API")), /*#__PURE__*/_react.default.createElement("li", {
     className: "nav-item dropdown",
     style: {
       minWidth: '280px'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "nav-link dropdown-toggle",
     role: "button",
     "data-bs-toggle": "dropdown",
     "aria-expanded": "false"
-  }, "Demos"), /*#__PURE__*/React.createElement("ul", {
+  }, "Demos"), /*#__PURE__*/_react.default.createElement("ul", {
     className: "dropdown-menu"
-  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
     href: paymentURL
-  }, /*#__PURE__*/React.createElement("i", {
+  }, /*#__PURE__*/_react.default.createElement("i", {
     className: "bi bi-credit-card",
     style: {
       marginRight: '10px'
     }
-  }), "Payments (web2/3)")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  }), "Payments (web2/3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
     href: securedocURL
-  }, /*#__PURE__*/React.createElement("i", {
+  }, /*#__PURE__*/_react.default.createElement("i", {
     className: "bi bi-file-lock",
     style: {
       marginRight: '10px'
     }
-  }), "File Storage (web2/3)")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("hr", {
+  }), "File Storage (web2/3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("hr", {
     className: "dropdown-divider"
-  })), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
     href: custodyURL
-  }, /*#__PURE__*/React.createElement("i", {
+  }, /*#__PURE__*/_react.default.createElement("i", {
     className: "bi bi-key",
     style: {
       marginRight: '10px'
     }
-  }), "Custody (web3)")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  }), "Custody (web3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
     href: notificationsURL
-  }, /*#__PURE__*/React.createElement("i", {
+  }, /*#__PURE__*/_react.default.createElement("i", {
     className: "bi bi-app-indicator",
     style: {
       marginRight: '10px'
     }
-  }), "Notifications (web3)"))))), /*#__PURE__*/React.createElement("ul", {
+  }), "Notifications (web3)"))))), /*#__PURE__*/_react.default.createElement("ul", {
     className: "navbar-nav"
-  }, /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement("li", {
     className: "nav-item vertical",
     style: {
       marginRight: '10px'
     }
-  }, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/_react.default.createElement("a", {
     className: "nav-link",
     href: "mailto:arjun@selfguard.xyz"
-  }, "Contact")), session.doesSessionExist && /*#__PURE__*/React.createElement(_logout.default, null)))));
+  }, "Contact")), session.doesSessionExist && /*#__PURE__*/_react.default.createElement(_logout.default, null)))));
 } //
 // <li><a className="dropdown-item vertical" href={notificationsURL}>
 // <i className="bi bi-app-indicator" style={{marginRight:'10px'}}></i>

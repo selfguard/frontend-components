@@ -14,6 +14,8 @@ var _axios = _interopRequireDefault(require("axios"));
 
 var _session = _interopRequireDefault(require("supertokens-auth-react/recipe/session"));
 
+var _react = _interopRequireDefault(require("react"));
+
 var _style = require("./style");
 
 const _excluded = ["DefaultComponent"],
@@ -42,77 +44,77 @@ function Page(_ref) {
   } = _ref,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "container",
     style: {
       marginTop: '20px'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "text-center"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "navbar-brand vertical text-center",
     style: {
       justifyContent: 'center'
     }
-  }, /*#__PURE__*/React.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: "/logo.png",
     width: "70",
     height: "70",
     className: "d-inline-block",
     alt: ""
-  }), /*#__PURE__*/React.createElement("h1", {
+  }), /*#__PURE__*/_react.default.createElement("h1", {
     className: "d-inline-block",
     style: {
       margin: 0,
       marginLeft: '5px',
       color: 'black'
     }
-  }, /*#__PURE__*/React.createElement("b", null, "SelfGuard - File Storage")))), /*#__PURE__*/React.createElement(DefaultComponent, props), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/_react.default.createElement("b", null, "SelfGuard - File Storage")))), /*#__PURE__*/_react.default.createElement(DefaultComponent, props), /*#__PURE__*/_react.default.createElement("p", {
     className: "text-center",
     style: {
       marginTop: '20px'
     }
-  }, " Powered by SelfGuard "), /*#__PURE__*/React.createElement("div", {
+  }, " Powered by SelfGuard "), /*#__PURE__*/_react.default.createElement("div", {
     className: "text-center",
     style: {
       marginTop: '10px'
     }
-  }, /*#__PURE__*/React.createElement("h6", {
+  }, /*#__PURE__*/_react.default.createElement("h6", {
     style: {
       lineHeight: '25px'
     }
-  }, "When you initially sign up and create an account, a ", /*#__PURE__*/React.createElement("b", null, "public/private key encrypted by your password"), " is created. "), /*#__PURE__*/React.createElement("h6", {
+  }, "When you initially sign up and create an account, a ", /*#__PURE__*/_react.default.createElement("b", null, "public/private key encrypted by your password"), " is created. "), /*#__PURE__*/_react.default.createElement("h6", {
     style: {
       lineHeight: '25px'
     }
-  }, "Your public key is used to ", /*#__PURE__*/React.createElement("b", null, "asymmetric ally encrypt the data keys"), " used for encryptions."), /*#__PURE__*/React.createElement("h6", {
+  }, "Your public key is used to ", /*#__PURE__*/_react.default.createElement("b", null, "asymmetric ally encrypt the data keys"), " used for encryptions."), /*#__PURE__*/_react.default.createElement("h6", {
     style: {
       lineHeight: '25px'
     }
-  }, "Your private key is used to ", /*#__PURE__*/React.createElement("b", null, "asymmetric ally decrypt the data keys"), " use for decryptions.")), /*#__PURE__*/React.createElement("div", {
+  }, "Your private key is used to ", /*#__PURE__*/_react.default.createElement("b", null, "asymmetric ally decrypt the data keys"), " use for decryptions.")), /*#__PURE__*/_react.default.createElement("div", {
     className: "col-12 text-center",
     style: {
       marginTop: "50px",
       paddingBottom: '10px'
     }
-  }, /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("div", {
     className: "navbar-brand vertical text-center",
     style: {
       justifyContent: 'center'
     }
-  }, /*#__PURE__*/React.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: "/logo.png",
     width: "40",
     height: "40",
     className: "d-inline-block",
     alt: ""
-  }), /*#__PURE__*/React.createElement("h3", {
+  }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "d-inline-block",
     style: {
       margin: 0,
       marginLeft: '5px'
     }
-  }, /*#__PURE__*/React.createElement("b", null, "SelfGuard"))), /*#__PURE__*/React.createElement("p", null, "\xA9 2022 SelfGuard Inc. All rights reserved.")));
+  }, /*#__PURE__*/_react.default.createElement("b", null, "SelfGuard"))), /*#__PURE__*/_react.default.createElement("p", null, "\xA9 2022 SelfGuard Inc. All rights reserved.")));
 }
 
 const functions = originalImplementation => {
