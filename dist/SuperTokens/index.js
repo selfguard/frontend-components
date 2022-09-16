@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Page = Page;
-exports.options = exports.functions = void 0;
+exports.functions = exports.default = void 0;
 
 require("core-js/modules/es.promise.js");
 
@@ -155,39 +155,43 @@ const functions = originalImplementation => {
 };
 
 exports.functions = functions;
-const options = {
-  signInAndUpFeature: {
-    defaultToSignUp: true
-  },
-  useShadowDom: false,
-  override: {
-    components: {
-      EmailPasswordSignIn_Override: _ref2 => {
-        let {
-          DefaultComponent
-        } = _ref2,
-            props = _objectWithoutProperties(_ref2, _excluded2);
 
-        return Page(_objectSpread({
-          DefaultComponent
-        }, props));
-      },
-      EmailPasswordSignUp_Override: _ref3 => {
-        let {
-          DefaultComponent
-        } = _ref3,
-            props = _objectWithoutProperties(_ref3, _excluded3);
-
-        return Page(_objectSpread({
-          DefaultComponent
-        }, props));
-      }
+var _default = SuperTokensOptions = () => {
+  return {
+    signInAndUpFeature: {
+      defaultToSignUp: true
     },
-    functions
-  },
-  emailVerificationFeature: {
-    mode: "REQUIRED"
-  },
-  style: _style.style
+    useShadowDom: false,
+    override: {
+      components: {
+        EmailPasswordSignIn_Override: _ref2 => {
+          let {
+            DefaultComponent
+          } = _ref2,
+              props = _objectWithoutProperties(_ref2, _excluded2);
+
+          return Page(_objectSpread({
+            DefaultComponent
+          }, props));
+        },
+        EmailPasswordSignUp_Override: _ref3 => {
+          let {
+            DefaultComponent
+          } = _ref3,
+              props = _objectWithoutProperties(_ref3, _excluded3);
+
+          return Page(_objectSpread({
+            DefaultComponent
+          }, props));
+        }
+      },
+      functions
+    },
+    emailVerificationFeature: {
+      mode: "REQUIRED"
+    },
+    style: _style.style
+  };
 };
-exports.options = options;
+
+exports.default = _default;

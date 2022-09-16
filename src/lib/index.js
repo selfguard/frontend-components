@@ -1,5 +1,9 @@
 import Footer from './Footer';
 import Navbar from './Navbar';
+import SuperTokensOptions from './SuperTokens';
 
-export { Footer,
-        Navbar };
+export {
+  SuperTokensOptions,
+  Footer,
+  Navbar
+};

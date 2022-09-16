@@ -65,24 +65,26 @@ export const functions = (originalImplementation) => {
     }
 }
 
-export const options = {
-  signInAndUpFeature: {
-      defaultToSignUp: true
-  },
-  useShadowDom: false,
-    override: {
-      components: {
-          EmailPasswordSignIn_Override: ({ DefaultComponent, ...props }) => {
-            return Page({ DefaultComponent, ...props })
-          },
-          EmailPasswordSignUp_Override: ({ DefaultComponent, ...props }) => {
-            return Page({ DefaultComponent, ...props })
-          },
+export default SuperTokensOptions = () => {
+  return {
+    signInAndUpFeature: {
+        defaultToSignUp: true
+    },
+    useShadowDom: false,
+      override: {
+        components: {
+            EmailPasswordSignIn_Override: ({ DefaultComponent, ...props }) => {
+              return Page({ DefaultComponent, ...props })
+            },
+            EmailPasswordSignUp_Override: ({ DefaultComponent, ...props }) => {
+              return Page({ DefaultComponent, ...props })
+            },
+        },
+        functions
       },
-      functions
-    },
-    emailVerificationFeature: {
-        mode: "REQUIRED",
-    },
-    style
+      emailVerificationFeature: {
+          mode: "REQUIRED",
+      },
+      style
+  }
 }
