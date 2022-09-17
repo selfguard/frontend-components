@@ -1,10 +1,30 @@
 import SelfGuard from 'selfguard-client';
 import axios from "axios";
 import Session from "supertokens-auth-react/recipe/session";
-import React from 'react';
 import {style} from './style';
+import React from 'react';
 Session.addAxiosInterceptors(axios);
-let api_key = process.env.REACT_APP_SELFGUARD_API_KEY;
+let domain = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:8080"
+
+async function createAPIKey(domain){
+  try {
+    let result = await axios.post(domain + "/createAPIKey");
+    return result.data;
+  }
+  catch(err){
+    console.log({err});
+  }
+}
+
+async function retrieveAPIKey(){
+  try {
+    let result = await axios.post(domain + "/retrieveAPIKey");
+    return result.data;
+  }
+  catch(err){
+    console.log({err});
+  }
+}
 
 //display of the auth component
 export function Page({ DefaultComponent, ...props }) {
@@ -13,7 +33,7 @@ export function Page({ DefaultComponent, ...props }) {
           <div className='text-center'>
             <div className="navbar-brand vertical text-center" style={{justifyContent:'center'}}>
               <img src="/logo.png" width="70" height="70" className="d-inline-block" alt=""/>
-               <h1 className="d-inline-block" style={{margin:0,marginLeft:'5px',color:'black'}}><b>SelfGuard - File Storage</b></h1>
+               <h1 className="d-inline-block" style={{margin:0,marginLeft:'5px',color:'black'}}><b>SelfGuard</b></h1>
             </div>
           </div>
           <DefaultComponent {...props} />
@@ -41,10 +61,12 @@ export const functions = (originalImplementation) => {
         signIn: async function (input){
           let status = await originalImplementation.signIn(input);
           if(status.status === "OK"){
+            let api_key = await retrieveAPIKey(); //get api key
             let password = input.formFields[1].value;
             let sg = new SelfGuard(api_key); //setup Selfguard Instnace
             let keys = await sg.getKeyPairs();
             let private_key = sg.decryptWithPassword(keys[0].encrypted_private_key,password);
+            window.storage.setItem("api_key", api_key);
             window.storage.setItem("private_key",private_key);
             window.storage.setItem("public_key",keys[0].public_key);
           }
@@ -53,12 +75,19 @@ export const functions = (originalImplementation) => {
         signUp: async function (input) {
           let status = await originalImplementation.signUp(input);
           if(status.status === "OK"){
-            let password = input.formFields[1].value;
-            let sg = new SelfGuard(api_key); //setup Selfguard Instnace
-            let key_pair = sg.createKeyPair('rsa'); //Generate Key Pair
-            await sg.uploadKeyPair(key_pair, password); //Upload Key Pair
-            window.storage.setItem("private_key",key_pair.private_key);
-            window.storage.setItem("public_key",key_pair.public_key);
+            try {
+              let password = input.formFields[1].value;
+              let api_key = await createAPIKey(); //Create API Key
+              let sg = new SelfGuard(api_key); //Setup Selfguard Instnace
+              let key_pair = sg.createKeyPair('rsa'); //Generate Key Pair
+              await sg.uploadKeyPair(key_pair, password); //Upload Key Pair
+              window.storage.setItem("private_key",key_pair.private_key);
+              window.storage.setItem("public_key",key_pair.public_key);
+              window.storage.setItem("api_key", api_key);
+            }
+            catch(err){
+              console.log({err});
+            }
           }
           return status;
         }
@@ -67,6 +96,15 @@ export const functions = (originalImplementation) => {
 
 export default function SuperTokensOptions(){
   return {
+    getRedirectionURL: async (context) => {
+        if (context.action === "SUCCESS") {
+            if (context.redirectToPath !== undefined) {
+                return context.redirectToPath;
+            }
+            return "/";
+        }
+        return undefined;
+    },
     signInAndUpFeature: {
         defaultToSignUp: true
     },

@@ -1,16 +1,10 @@
 import React from 'react';
 
-import { useSessionContext } from 'supertokens-auth-react/recipe/session';
-import Logout from './logout';
-
-export default function Navbar() {
-    let session = useSessionContext();
-
+export default function Navbar({Children}) {
     let apiURL = "https://selfguard.xyz/api";
     let securedocURL = "https://demo-filestorage.selfguard.xyz";
     let custodyURL = "https://demo-custody.selfguard.xyz";
     let paymentURL = 'https://demo-payments.selfguard.xyz';
-    // let messagingURL = 'https://demo-messaging.selfguard.xyz';
     let notificationsURL = 'https://demo-notifications.selfguard.xyz';
 
     return (
@@ -55,17 +49,10 @@ export default function Navbar() {
               <li className="nav-item vertical" style={{marginRight:'10px'}}>
                 <a className='nav-link' href="mailto:arjun@selfguard.xyz">Contact</a>
               </li>
-              {session.doesSessionExist && <Logout/> }
+              {Children && <Children/> }
             </ul>
           </div>
         </div>
       </nav>
     );
 }
-//
-// <li><a className="dropdown-item vertical" href={notificationsURL}>
-// <i className="bi bi-app-indicator" style={{marginRight:'10px'}}></i>
-// Notifications (web3)</a></li>
-// <li><a className="dropdown-item vertical" href={messagingURL}>
-// <i className="bi bi-chat-square" style={{marginRight:'10px'}}></i>
-// Messaging (web3)</a></li>

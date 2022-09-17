@@ -7,19 +7,16 @@ exports.default = Navbar;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _session = require("supertokens-auth-react/recipe/session");
-
-var _logout = _interopRequireDefault(require("./logout"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Navbar() {
-  let session = (0, _session.useSessionContext)();
+function Navbar(_ref) {
+  let {
+    Children
+  } = _ref;
   let apiURL = "https://selfguard.xyz/api";
   let securedocURL = "https://demo-filestorage.selfguard.xyz";
   let custodyURL = "https://demo-custody.selfguard.xyz";
-  let paymentURL = 'https://demo-payments.selfguard.xyz'; // let messagingURL = 'https://demo-messaging.selfguard.xyz';
-
+  let paymentURL = 'https://demo-payments.selfguard.xyz';
   let notificationsURL = 'https://demo-notifications.selfguard.xyz';
   return /*#__PURE__*/_react.default.createElement("nav", {
     className: "navbar sticky-top navbar-dark navbar-expand-lg bg-dark",
@@ -120,11 +117,5 @@ function Navbar() {
   }, /*#__PURE__*/_react.default.createElement("a", {
     className: "nav-link",
     href: "mailto:arjun@selfguard.xyz"
-  }, "Contact")), session.doesSessionExist && /*#__PURE__*/_react.default.createElement(_logout.default, null)))));
-} //
-// <li><a className="dropdown-item vertical" href={notificationsURL}>
-// <i className="bi bi-app-indicator" style={{marginRight:'10px'}}></i>
-// Notifications (web3)</a></li>
-// <li><a className="dropdown-item vertical" href={messagingURL}>
-// <i className="bi bi-chat-square" style={{marginRight:'10px'}}></i>
-// Messaging (web3)</a></li>
+  }, "Contact")), Children && /*#__PURE__*/_react.default.createElement(Children, null)))));
+}
