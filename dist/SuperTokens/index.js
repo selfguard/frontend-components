@@ -4,7 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Page = Page;
-exports.functions = exports.default = void 0;
+exports.default = SuperTokensOptions;
+exports.functions = void 0;
 
 require("core-js/modules/es.promise.js");
 
@@ -156,7 +157,7 @@ const functions = originalImplementation => {
 
 exports.functions = functions;
 
-var _default = SuperTokensOptions = () => {
+function SuperTokensOptions() {
   return {
     signInAndUpFeature: {
       defaultToSignUp: true
@@ -192,6 +193,4 @@ var _default = SuperTokensOptions = () => {
     },
     style: _style.style
   };
-};
-
-exports.default = _default;
+}

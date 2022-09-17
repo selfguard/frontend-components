@@ -65,7 +65,7 @@ export const functions = (originalImplementation) => {
     }
 }
 
-export default SuperTokensOptions = () => {
+export default function SuperTokensOptions(){
   return {
     signInAndUpFeature: {
         defaultToSignUp: true
