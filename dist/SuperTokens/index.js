@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Page = Page;
 exports.default = SuperTokensOptions;
-exports.functions = void 0;
 
 require("core-js/modules/es.promise.js");
 
@@ -35,12 +34,12 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-_session.default.addAxiosInterceptors(_axios.default);
-
 let domain = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:8080";
 
 async function createAPIKey(domain) {
   try {
+    _session.default.addAxiosInterceptors(_axios.default);
+
     let result = await _axios.default.post(domain + "/createAPIKey");
     return result.data;
   } catch (err) {
@@ -52,6 +51,8 @@ async function createAPIKey(domain) {
 
 async function retrieveAPIKey() {
   try {
+    _session.default.addAxiosInterceptors(_axios.default);
+
     let result = await _axios.default.post(domain + "/retrieveAPIKey");
     return result.data;
   } catch (err) {
@@ -141,58 +142,7 @@ function Page(_ref) {
   }, /*#__PURE__*/_react.default.createElement("b", null, "SelfGuard"))), /*#__PURE__*/_react.default.createElement("p", null, "\xA9 2022 SelfGuard Inc. All rights reserved.")));
 }
 
-const functions = originalImplementation => {
-  return _objectSpread(_objectSpread({}, originalImplementation), {}, {
-    signIn: async function signIn(input) {
-      let status = await originalImplementation.signIn(input);
-
-      if (status.status === "OK") {
-        let api_key = await retrieveAPIKey(); //get api key
-
-        let password = input.formFields[1].value;
-        let sg = new _selfguardClient.default(api_key); //setup Selfguard Instnace
-
-        let keys = await sg.getKeyPairs();
-        let private_key = sg.decryptWithPassword(keys[0].encrypted_private_key, password);
-        window.storage.setItem("api_key", api_key);
-        window.storage.setItem("private_key", private_key);
-        window.storage.setItem("public_key", keys[0].public_key);
-      }
-
-      return status;
-    },
-    signUp: async function signUp(input) {
-      let status = await originalImplementation.signUp(input);
-
-      if (status.status === "OK") {
-        try {
-          let password = input.formFields[1].value;
-          let api_key = await createAPIKey(); //Create API Key
-
-          let sg = new _selfguardClient.default(api_key); //Setup Selfguard Instnace
-
-          let key_pair = sg.createKeyPair('rsa'); //Generate Key Pair
-
-          await sg.uploadKeyPair(key_pair, password); //Upload Key Pair
-
-          window.storage.setItem("private_key", key_pair.private_key);
-          window.storage.setItem("public_key", key_pair.public_key);
-          window.storage.setItem("api_key", api_key);
-        } catch (err) {
-          console.log({
-            err
-          });
-        }
-      }
-
-      return status;
-    }
-  });
-};
-
-exports.functions = functions;
-
-function SuperTokensOptions() {
+function SuperTokensOptions(_signIn, _signUp) {
   return {
     getRedirectionURL: async context => {
       if (context.action === "SUCCESS") {
@@ -232,7 +182,30 @@ function SuperTokensOptions() {
           }, props));
         }
       },
-      functions
+      functions: originalImplementation => {
+        return _objectSpread(_objectSpread({}, originalImplementation), {}, {
+          signIn: async function signIn(input) {
+            let status = await originalImplementation.signIn(input);
+
+            if (status.status === "OK") {
+              let password = input.formFields[1].value;
+              await _signIn(password);
+            }
+
+            return status;
+          },
+          signUp: async function signUp(input) {
+            let status = await originalImplementation.signUp(input);
+
+            if (status.status === "OK") {
+              let password = input.formFields[1].value;
+              await _signUp(password);
+            }
+
+            return status;
+          }
+        });
+      }
     },
     emailVerificationFeature: {
       mode: "REQUIRED"

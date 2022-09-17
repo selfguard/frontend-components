@@ -3,11 +3,11 @@ import axios from "axios";
 import Session from "supertokens-auth-react/recipe/session";
 import {style} from './style';
 import React from 'react';
-Session.addAxiosInterceptors(axios);
 let domain = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:8080"
 
 async function createAPIKey(domain){
   try {
+    Session.addAxiosInterceptors(axios);
     let result = await axios.post(domain + "/createAPIKey");
     return result.data;
   }
@@ -18,6 +18,7 @@ async function createAPIKey(domain){
 
 async function retrieveAPIKey(){
   try {
+    Session.addAxiosInterceptors(axios);
     let result = await axios.post(domain + "/retrieveAPIKey");
     return result.data;
   }
@@ -55,46 +56,7 @@ export function Page({ DefaultComponent, ...props }) {
   );
 }
 
-export const functions = (originalImplementation) => {
-    return {
-        ...originalImplementation,
-        signIn: async function (input){
-          let status = await originalImplementation.signIn(input);
-          if(status.status === "OK"){
-            let api_key = await retrieveAPIKey(); //get api key
-            let password = input.formFields[1].value;
-            let sg = new SelfGuard(api_key); //setup Selfguard Instnace
-            let keys = await sg.getKeyPairs();
-            let private_key = sg.decryptWithPassword(keys[0].encrypted_private_key,password);
-            window.storage.setItem("api_key", api_key);
-            window.storage.setItem("private_key",private_key);
-            window.storage.setItem("public_key",keys[0].public_key);
-          }
-          return status;
-        },
-        signUp: async function (input) {
-          let status = await originalImplementation.signUp(input);
-          if(status.status === "OK"){
-            try {
-              let password = input.formFields[1].value;
-              let api_key = await createAPIKey(); //Create API Key
-              let sg = new SelfGuard(api_key); //Setup Selfguard Instnace
-              let key_pair = sg.createKeyPair('rsa'); //Generate Key Pair
-              await sg.uploadKeyPair(key_pair, password); //Upload Key Pair
-              window.storage.setItem("private_key",key_pair.private_key);
-              window.storage.setItem("public_key",key_pair.public_key);
-              window.storage.setItem("api_key", api_key);
-            }
-            catch(err){
-              console.log({err});
-            }
-          }
-          return status;
-        }
-    }
-}
-
-export default function SuperTokensOptions(){
+export default function SuperTokensOptions(signIn, signUp){
   return {
     getRedirectionURL: async (context) => {
         if (context.action === "SUCCESS") {
@@ -118,7 +80,27 @@ export default function SuperTokensOptions(){
               return Page({ DefaultComponent, ...props })
             },
         },
-        functions
+        functions: (originalImplementation) => {
+          return {
+              ...originalImplementation,
+              signIn: async function (input){
+                let status = await originalImplementation.signIn(input);
+                if(status.status === "OK"){
+                  let password = input.formFields[1].value;
+                  await signIn(password);
+                }
+                return status;
+              },
+              signUp: async function (input) {
+                let status = await originalImplementation.signUp(input);
+                if(status.status === "OK"){
+                  let password = input.formFields[1].value;
+                  await signUp(password);
+                }
+                return status;
+              }
+          }
+        }
       },
       emailVerificationFeature: {
           mode: "REQUIRED",
