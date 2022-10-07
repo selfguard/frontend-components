@@ -1,31 +1,5 @@
-import SelfGuard from 'selfguard-client';
-import axios from "axios";
-import Session from "supertokens-auth-react/recipe/session";
 import {style} from './style';
 import React from 'react';
-let domain = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:8080"
-
-async function createAPIKey(domain){
-  try {
-    Session.addAxiosInterceptors(axios);
-    let result = await axios.post(domain + "/createAPIKey");
-    return result.data;
-  }
-  catch(err){
-    console.log({err});
-  }
-}
-
-async function retrieveAPIKey(){
-  try {
-    Session.addAxiosInterceptors(axios);
-    let result = await axios.post(domain + "/retrieveAPIKey");
-    return result.data;
-  }
-  catch(err){
-    console.log({err});
-  }
-}
 
 //display of the auth component
 export function Page({ DefaultComponent, ...props }) {
