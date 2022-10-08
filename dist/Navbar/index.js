@@ -75,13 +75,13 @@ function Navbar(_ref) {
     className: "dropdown-menu"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
-    href: paymentURL
+    href: notificationsURL
   }, /*#__PURE__*/_react.default.createElement("i", {
-    className: "bi bi-credit-card",
+    className: "bi bi-bell",
     style: {
       marginRight: '10px'
     }
-  }), "Payments (web2/3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), "Notifications (web3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
     href: securedocURL
   }, /*#__PURE__*/_react.default.createElement("i", {
@@ -89,9 +89,7 @@ function Navbar(_ref) {
     style: {
       marginRight: '10px'
     }
-  }), "File Storage (web2/3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("hr", {
-    className: "dropdown-divider"
-  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
+  }), "File Storage (web2/3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
     href: custodyURL
   }, /*#__PURE__*/_react.default.createElement("i", {
@@ -101,13 +99,13 @@ function Navbar(_ref) {
     }
   }), "Custody (web3)")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("a", {
     className: "dropdown-item vertical4",
-    href: notificationsURL
+    href: paymentURL
   }, /*#__PURE__*/_react.default.createElement("i", {
-    className: "bi bi-app-indicator",
+    className: "bi bi-credit-card",
     style: {
       marginRight: '10px'
     }
-  }), "Notifications (web3)"))))), /*#__PURE__*/_react.default.createElement("ul", {
+  }), "Payments (web2/3)"))))), /*#__PURE__*/_react.default.createElement("ul", {
     className: "navbar-nav"
   }, /*#__PURE__*/_react.default.createElement("li", {
     className: "nav-item vertical",

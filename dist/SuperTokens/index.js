@@ -8,12 +8,6 @@ exports.default = SuperTokensOptions;
 
 require("core-js/modules/es.promise.js");
 
-var _selfguardClient = _interopRequireDefault(require("selfguard-client"));
-
-var _axios = _interopRequireDefault(require("axios"));
-
-var _session = _interopRequireDefault(require("supertokens-auth-react/recipe/session"));
-
 var _style = require("./style");
 
 var _react = _interopRequireDefault(require("react"));
@@ -34,35 +28,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-let domain = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:8080";
-
-async function createAPIKey(domain) {
-  try {
-    _session.default.addAxiosInterceptors(_axios.default);
-
-    let result = await _axios.default.post(domain + "/createAPIKey");
-    return result.data;
-  } catch (err) {
-    console.log({
-      err
-    });
-  }
-}
-
-async function retrieveAPIKey() {
-  try {
-    _session.default.addAxiosInterceptors(_axios.default);
-
-    let result = await _axios.default.post(domain + "/retrieveAPIKey");
-    return result.data;
-  } catch (err) {
-    console.log({
-      err
-    });
-  }
-} //display of the auth component
-
-
+//display of the auth component
 function Page(_ref) {
   let {
     DefaultComponent
