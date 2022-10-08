@@ -27,20 +27,19 @@ export default function Navbar({Children}) {
                Demos
                </div>
                <ul className="dropdown-menu">
+                 <li><a className="dropdown-item vertical4" href={notificationsURL}>
+                 <i className="bi bi-bell" style={{marginRight:'10px'}}></i>
+                 Notifications (web3)</a></li>
+                 <li><a className="dropdown-item vertical4" href={securedocURL}>
+                 <i className="bi bi-file-lock" style={{marginRight:'10px'}}></i>
+                 File Storage (web2/3)</a></li>
+                 <li><a className="dropdown-item vertical4" href={custodyURL}>
+                 <i className="bi bi-key" style={{marginRight:'10px'}}></i>
+                 Custody (web3)</a></li>
                  <li><a className="dropdown-item vertical4" href={paymentURL}>
                  <i className="bi bi-credit-card" style={{marginRight:'10px'}}></i>
                  Payments (web2/3)
                  </a></li>
-                 <li><a className="dropdown-item vertical4" href={securedocURL}>
-                 <i className="bi bi-file-lock" style={{marginRight:'10px'}}></i>
-                 File Storage (web2/3)</a></li>
-                 <li><hr className="dropdown-divider"/></li>
-                 <li><a className="dropdown-item vertical4" href={custodyURL}>
-                 <i className="bi bi-key" style={{marginRight:'10px'}}></i>
-                 Custody (web3)</a></li>
-                 <li><a className="dropdown-item vertical4" href={notificationsURL}>
-                 <i className="bi bi-app-indicator" style={{marginRight:'10px'}}></i>
-                 Notifications (web3)</a></li>
                </ul>
              </li>
            </ul>
