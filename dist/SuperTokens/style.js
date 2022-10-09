@@ -35,7 +35,7 @@ const style = {
   },
   container: {
     zoom: 1.5,
-    fontFamily: "'Roboto Mono',monospace;",
+    fontFamily: "'Roboto';",
     fontWeight: 200,
     background: '#c4c8d4',
     border: 'none',
