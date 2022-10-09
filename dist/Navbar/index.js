@@ -7,6 +7,8 @@ exports.default = Navbar;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _logout = _interopRequireDefault(require("./logout.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Navbar(_ref) {
@@ -115,5 +117,5 @@ function Navbar(_ref) {
   }, /*#__PURE__*/_react.default.createElement("a", {
     className: "nav-link",
     href: "mailto:arjun@selfguard.xyz"
-  }, "Contact")), Children && /*#__PURE__*/_react.default.createElement(Children, null)))));
+  }, "Contact")), /*#__PURE__*/_react.default.createElement(_logout.default, null)))));
 }

@@ -11,17 +11,26 @@ var _emailpassword = require("supertokens-auth-react/recipe/emailpassword");
 
 var _session = require("supertokens-auth-react/recipe/session");
 
+var _core = require("@usedapp/core");
+
 function Logout() {
   let session = (0, _session.useSessionContext)();
+  const {
+    deactivate,
+    account
+  } = (0, _core.useEthers)();
 
   async function logoutClicked() {
     window.storage.removeItem('api_key');
     window.storage.removeItem('public_key');
     window.storage.removeItem('private_key');
-    await (0, _emailpassword.signOut)();
+
+    if (account) {
+      deactivate();
+    } else await (0, _emailpassword.signOut)();
   }
 
-  return session.doesSessionExist && /*#__PURE__*/React.createElement("li", {
+  return (session.doesSessionExist || account) && /*#__PURE__*/React.createElement("li", {
     className: "nav-item vertical"
   }, /*#__PURE__*/React.createElement("button", {
     href: "#",
