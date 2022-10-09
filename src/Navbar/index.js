@@ -1,5 +1,4 @@
 import React from 'react';
-import Logout from './logout.js';
 
 export default function Navbar({Children}) {
     let apiURL = "https://selfguard.xyz/api";
@@ -49,7 +48,7 @@ export default function Navbar({Children}) {
               <li className="nav-item vertical" style={{marginRight:'10px'}}>
                 <a className='nav-link' href="mailto:arjun@selfguard.xyz">Contact</a>
               </li>
-              <Logout/>
+              {Children && <Children/>}
             </ul>
           </div>
         </div>

@@ -3,7 +3,7 @@ import axios from "axios";
 import Session from "supertokens-auth-react/recipe/session";
 let domain = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:8080"
 
-async function createAPIKey(domain){
+async function createAPIKey(){
   try {
     Session.addAxiosInterceptors(axios);
     let result = await axios.post(domain + "/createAPIKey");

@@ -1,5 +1,6 @@
 import {style} from './style';
 import React from 'react';
+import {signIn, signUp} from './auth.js';
 
 //display of the auth component
 export function Page({ DefaultComponent, ...props }) {
@@ -30,7 +31,7 @@ export function Page({ DefaultComponent, ...props }) {
   );
 }
 
-export default function SuperTokensOptions(signIn, signUp){
+export function SuperTokensOptions(){
   return {
     getRedirectionURL: async (context) => {
         if (context.action === "SUCCESS") {
@@ -81,4 +82,16 @@ export default function SuperTokensOptions(signIn, signUp){
       },
       style
   }
+}
+
+export function getApiDomain() {
+  const apiPort = process.env.REACT_APP_API_PORT || 8080;
+  const apiUrl = process.env.REACT_APP_API_URL || `http://localhost:${apiPort}`;
+  return apiUrl;
+}
+
+export function getWebsiteDomain() {
+  const websitePort = process.env.REACT_APP_WEBSITE_PORT || 3000;
+  const websiteUrl = process.env.REACT_APP_WEBSITE_URL || `http://localhost:${websitePort}`;
+  return websiteUrl;
 }
