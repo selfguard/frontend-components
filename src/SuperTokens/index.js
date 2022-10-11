@@ -1,6 +1,6 @@
 import {style} from './style';
 import React from 'react';
-import {signIn, signUp} from './auth.js';
+// import {signIn, signUp} from './auth.js';
 
 //display of the auth component
 export function Page({ DefaultComponent, ...props }) {
@@ -31,7 +31,7 @@ export function Page({ DefaultComponent, ...props }) {
   );
 }
 
-export function SuperTokensOptions(){
+export function SuperTokensOptions(signIn, signUp){
   return {
     getRedirectionURL: async (context) => {
         if (context.action === "SUCCESS") {

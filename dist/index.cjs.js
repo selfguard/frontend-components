@@ -5,9 +5,6 @@ var _defineProperty = require('@babel/runtime/helpers/defineProperty');
 var _asyncToGenerator = require('@babel/runtime/helpers/asyncToGenerator');
 var _objectWithoutProperties = require('@babel/runtime/helpers/objectWithoutProperties');
 var _regeneratorRuntime = require('@babel/runtime/regenerator');
-var SelfGuard = require('selfguard-client');
-var axios = require('axios');
-var Session = require('supertokens-auth-react/recipe/session');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -16,9 +13,6 @@ var _defineProperty__default = /*#__PURE__*/_interopDefaultLegacy(_definePropert
 var _asyncToGenerator__default = /*#__PURE__*/_interopDefaultLegacy(_asyncToGenerator);
 var _objectWithoutProperties__default = /*#__PURE__*/_interopDefaultLegacy(_objectWithoutProperties);
 var _regeneratorRuntime__default = /*#__PURE__*/_interopDefaultLegacy(_regeneratorRuntime);
-var SelfGuard__default = /*#__PURE__*/_interopDefaultLegacy(SelfGuard);
-var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
-var Session__default = /*#__PURE__*/_interopDefaultLegacy(Session);
 
 function Navbar$1() {
   var apiURL = "https://selfguard.xyz/api";
@@ -270,187 +264,6 @@ var style = {
   }
 };
 
-var domain = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : "http://localhost:8080";
-
-function createAPIKey() {
-  return _createAPIKey.apply(this, arguments);
-}
-
-function _createAPIKey() {
-  _createAPIKey = _asyncToGenerator__default["default"]( /*#__PURE__*/_regeneratorRuntime__default["default"].mark(function _callee() {
-    var result;
-    return _regeneratorRuntime__default["default"].wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.prev = 0;
-            Session__default["default"].addAxiosInterceptors(axios__default["default"]);
-            _context.next = 4;
-            return axios__default["default"].post(domain + "/createAPIKey");
-
-          case 4:
-            result = _context.sent;
-            return _context.abrupt("return", result.data);
-
-          case 8:
-            _context.prev = 8;
-            _context.t0 = _context["catch"](0);
-            console.log({
-              err: _context.t0
-            });
-
-          case 11:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, null, [[0, 8]]);
-  }));
-  return _createAPIKey.apply(this, arguments);
-}
-
-function retrieveAPIKey() {
-  return _retrieveAPIKey.apply(this, arguments);
-}
-
-function _retrieveAPIKey() {
-  _retrieveAPIKey = _asyncToGenerator__default["default"]( /*#__PURE__*/_regeneratorRuntime__default["default"].mark(function _callee2() {
-    var result;
-    return _regeneratorRuntime__default["default"].wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            _context2.prev = 0;
-            Session__default["default"].addAxiosInterceptors(axios__default["default"]);
-            _context2.next = 4;
-            return axios__default["default"].post(domain + "/retrieveAPIKey");
-
-          case 4:
-            result = _context2.sent;
-            return _context2.abrupt("return", result.data);
-
-          case 8:
-            _context2.prev = 8;
-            _context2.t0 = _context2["catch"](0);
-            console.log({
-              err: _context2.t0
-            });
-
-          case 11:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2, null, [[0, 8]]);
-  }));
-  return _retrieveAPIKey.apply(this, arguments);
-}
-
-function signIn(_x) {
-  return _signIn.apply(this, arguments);
-}
-
-function _signIn() {
-  _signIn = _asyncToGenerator__default["default"]( /*#__PURE__*/_regeneratorRuntime__default["default"].mark(function _callee3(password) {
-    var api_key, sg, keys, private_key;
-    return _regeneratorRuntime__default["default"].wrap(function _callee3$(_context3) {
-      while (1) {
-        switch (_context3.prev = _context3.next) {
-          case 0:
-            _context3.prev = 0;
-            _context3.next = 3;
-            return retrieveAPIKey();
-
-          case 3:
-            api_key = _context3.sent;
-            //get api key
-            sg = new SelfGuard__default["default"](api_key, null, null, domain); //setup Selfguard Instnace
-
-            _context3.next = 7;
-            return sg.getKeyPairs();
-
-          case 7:
-            keys = _context3.sent;
-            private_key = sg.decryptWithPassword(keys[0].encrypted_private_key, password);
-            window.storage.setItem("api_key", api_key);
-            window.storage.setItem("private_key", private_key);
-            window.storage.setItem("public_key", keys[0].public_key);
-            _context3.next = 17;
-            break;
-
-          case 14:
-            _context3.prev = 14;
-            _context3.t0 = _context3["catch"](0);
-            console.log({
-              err: _context3.t0
-            });
-
-          case 17:
-            return _context3.abrupt("return");
-
-          case 18:
-          case "end":
-            return _context3.stop();
-        }
-      }
-    }, _callee3, null, [[0, 14]]);
-  }));
-  return _signIn.apply(this, arguments);
-}
-
-function signUp(_x2) {
-  return _signUp.apply(this, arguments);
-}
-
-function _signUp() {
-  _signUp = _asyncToGenerator__default["default"]( /*#__PURE__*/_regeneratorRuntime__default["default"].mark(function _callee4(password) {
-    var api_key, sg, key_pair;
-    return _regeneratorRuntime__default["default"].wrap(function _callee4$(_context4) {
-      while (1) {
-        switch (_context4.prev = _context4.next) {
-          case 0:
-            _context4.prev = 0;
-            _context4.next = 3;
-            return createAPIKey();
-
-          case 3:
-            api_key = _context4.sent;
-            //Create API Key
-            sg = new SelfGuard__default["default"](api_key, null, null, domain); //Setup Selfguard Instnace
-
-            key_pair = sg.createKeyPair('rsa'); //Generate Key Pair
-
-            _context4.next = 8;
-            return sg.uploadKeyPair(key_pair, password);
-
-          case 8:
-            //Upload Key Pair
-            window.storage.setItem("private_key", key_pair.private_key);
-            window.storage.setItem("public_key", key_pair.public_key);
-            window.storage.setItem("api_key", api_key);
-            _context4.next = 16;
-            break;
-
-          case 13:
-            _context4.prev = 13;
-            _context4.t0 = _context4["catch"](0);
-            console.log({
-              err: _context4.t0
-            });
-
-          case 16:
-            return _context4.abrupt("return");
-
-          case 17:
-          case "end":
-            return _context4.stop();
-        }
-      }
-    }, _callee4, null, [[0, 13]]);
-  }));
-  return _signUp.apply(this, arguments);
-}
-
 var _excluded = ["DefaultComponent"],
     _excluded2 = ["DefaultComponent"],
     _excluded3 = ["DefaultComponent"];
@@ -458,6 +271,7 @@ var _excluded = ["DefaultComponent"],
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty__default["default"](target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+//display of the auth component
 
 function Page(_ref) {
   var DefaultComponent = _ref.DefaultComponent,
@@ -535,7 +349,7 @@ function Page(_ref) {
     }
   }, /*#__PURE__*/React__default["default"].createElement("b", null, "SelfGuard"))), /*#__PURE__*/React__default["default"].createElement("p", null, "\xA9 2022 SelfGuard Inc. All rights reserved.")));
 }
-function SuperTokensOptions() {
+function SuperTokensOptions(_signIn, _signUp) {
   return {
     getRedirectionURL: function () {
       var _getRedirectionURL = _asyncToGenerator__default["default"]( /*#__PURE__*/_regeneratorRuntime__default["default"].mark(function _callee(context) {
@@ -620,7 +434,7 @@ function SuperTokensOptions() {
 
                       password = input.formFields[1].value;
                       _context2.next = 7;
-                      return signIn(password);
+                      return _signIn(password);
 
                     case 7:
                       return _context2.abrupt("return", status);
@@ -633,11 +447,11 @@ function SuperTokensOptions() {
               }, _callee2);
             }));
 
-            function signIn$1(_x2) {
+            function signIn(_x2) {
               return _signIn2.apply(this, arguments);
             }
 
-            return signIn$1;
+            return signIn;
           }(),
           signUp: function () {
             var _signUp2 = _asyncToGenerator__default["default"]( /*#__PURE__*/_regeneratorRuntime__default["default"].mark(function _callee3(input) {
@@ -659,7 +473,7 @@ function SuperTokensOptions() {
 
                       password = input.formFields[1].value;
                       _context3.next = 7;
-                      return signUp(password);
+                      return _signUp(password);
 
                     case 7:
                       return _context3.abrupt("return", status);
@@ -672,11 +486,11 @@ function SuperTokensOptions() {
               }, _callee3);
             }));
 
-            function signUp$1(_x3) {
+            function signUp(_x3) {
               return _signUp2.apply(this, arguments);
             }
 
-            return signUp$1;
+            return signUp;
           }()
         });
       }
