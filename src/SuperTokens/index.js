@@ -16,8 +16,8 @@ export function Page({ DefaultComponent, ...props }) {
           <p className='text-center' style={{marginTop:'20px'}}> Powered by SelfGuard </p>
           <div className='text-center' style={{marginTop:'10px'}}>
           <h6 style={{lineHeight:'25px'}}>When you initially sign up and create an account, a <b>public/private key encrypted by your password</b> is created. </h6>
-          <h6 style={{lineHeight:'25px'}}>Your public key is used to <b>asymmetric ally encrypt the data keys</b> used for encryptions.</h6>
-          <h6 style={{lineHeight:'25px'}}>Your private key is used to <b>asymmetric ally decrypt the data keys</b> use for decryptions.</h6>
+          <h6 style={{lineHeight:'25px'}}>Your public key is used to <b>asymmetrically encrypt the data keys</b> used for encryptions.</h6>
+          <h6 style={{lineHeight:'25px'}}>Your private key is used to <b>asymmetrically decrypt the data keys</b> use for decryptions.</h6>
           </div>
           <div className='col-12 text-center' style={{marginTop:"50px",paddingBottom:'10px'}}>
             <hr/>

@@ -493,11 +493,11 @@ function Page(_ref) {
     style: {
       lineHeight: '25px'
     }
-  }, "Your public key is used to ", /*#__PURE__*/React.createElement("b", null, "asymmetric ally encrypt the data keys"), " used for encryptions."), /*#__PURE__*/React.createElement("h6", {
+  }, "Your public key is used to ", /*#__PURE__*/React.createElement("b", null, "asymmetrically encrypt the data keys"), " used for encryptions."), /*#__PURE__*/React.createElement("h6", {
     style: {
       lineHeight: '25px'
     }
-  }, "Your private key is used to ", /*#__PURE__*/React.createElement("b", null, "asymmetric ally decrypt the data keys"), " use for decryptions.")), /*#__PURE__*/React.createElement("div", {
+  }, "Your private key is used to ", /*#__PURE__*/React.createElement("b", null, "asymmetrically decrypt the data keys"), " use for decryptions.")), /*#__PURE__*/React.createElement("div", {
     className: "col-12 text-center",
     style: {
       marginTop: "50px",
