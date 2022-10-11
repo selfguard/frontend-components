@@ -265,18 +265,16 @@ var style = {
 };
 
 var _excluded = ["DefaultComponent"],
-    _excluded2 = ["DefaultComponent"],
-    _excluded3 = ["DefaultComponent"];
-
+  _excluded2 = ["DefaultComponent"],
+  _excluded3 = ["DefaultComponent"];
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty__default["default"](target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-//display of the auth component
+// import {signIn, signUp} from './auth.js';
 
+//display of the auth component
 function Page(_ref) {
   var DefaultComponent = _ref.DefaultComponent,
-      props = _objectWithoutProperties__default["default"](_ref, _excluded);
-
+    props = _objectWithoutProperties__default["default"](_ref, _excluded);
   return /*#__PURE__*/React__default["default"].createElement("div", {
     className: "container",
     style: {
@@ -361,20 +359,15 @@ function SuperTokensOptions(_signIn, _signUp) {
                   _context.next = 4;
                   break;
                 }
-
                 if (!(context.redirectToPath !== undefined)) {
                   _context.next = 3;
                   break;
                 }
-
                 return _context.abrupt("return", context.redirectToPath);
-
               case 3:
                 return _context.abrupt("return", "/");
-
               case 4:
                 return _context.abrupt("return", undefined);
-
               case 5:
               case "end":
                 return _context.stop();
@@ -382,11 +375,9 @@ function SuperTokensOptions(_signIn, _signUp) {
           }
         }, _callee);
       }));
-
       function getRedirectionURL(_x) {
         return _getRedirectionURL.apply(this, arguments);
       }
-
       return getRedirectionURL;
     }(),
     signInAndUpFeature: {
@@ -397,16 +388,14 @@ function SuperTokensOptions(_signIn, _signUp) {
       components: {
         EmailPasswordSignIn_Override: function EmailPasswordSignIn_Override(_ref2) {
           var DefaultComponent = _ref2.DefaultComponent,
-              props = _objectWithoutProperties__default["default"](_ref2, _excluded2);
-
+            props = _objectWithoutProperties__default["default"](_ref2, _excluded2);
           return Page(_objectSpread({
             DefaultComponent: DefaultComponent
           }, props));
         },
         EmailPasswordSignUp_Override: function EmailPasswordSignUp_Override(_ref3) {
           var DefaultComponent = _ref3.DefaultComponent,
-              props = _objectWithoutProperties__default["default"](_ref3, _excluded3);
-
+            props = _objectWithoutProperties__default["default"](_ref3, _excluded3);
           return Page(_objectSpread({
             DefaultComponent: DefaultComponent
           }, props));
@@ -423,22 +412,17 @@ function SuperTokensOptions(_signIn, _signUp) {
                     case 0:
                       _context2.next = 2;
                       return originalImplementation.signIn(input);
-
                     case 2:
                       status = _context2.sent;
-
                       if (!(status.status === "OK")) {
                         _context2.next = 7;
                         break;
                       }
-
                       password = input.formFields[1].value;
                       _context2.next = 7;
                       return _signIn(password);
-
                     case 7:
                       return _context2.abrupt("return", status);
-
                     case 8:
                     case "end":
                       return _context2.stop();
@@ -446,11 +430,9 @@ function SuperTokensOptions(_signIn, _signUp) {
                 }
               }, _callee2);
             }));
-
             function signIn(_x2) {
               return _signIn2.apply(this, arguments);
             }
-
             return signIn;
           }(),
           signUp: function () {
@@ -462,22 +444,17 @@ function SuperTokensOptions(_signIn, _signUp) {
                     case 0:
                       _context3.next = 2;
                       return originalImplementation.signUp(input);
-
                     case 2:
                       status = _context3.sent;
-
                       if (!(status.status === "OK")) {
                         _context3.next = 7;
                         break;
                       }
-
                       password = input.formFields[1].value;
                       _context3.next = 7;
                       return _signUp(password);
-
                     case 7:
                       return _context3.abrupt("return", status);
-
                     case 8:
                     case "end":
                       return _context3.stop();
@@ -485,11 +462,9 @@ function SuperTokensOptions(_signIn, _signUp) {
                 }
               }, _callee3);
             }));
-
             function signUp(_x3) {
               return _signUp2.apply(this, arguments);
             }
-
             return signUp;
           }()
         });
@@ -521,7 +496,6 @@ var returnLibrary = function returnLibrary() {
     Navbar: Navbar
   };
 };
-
 var index = returnLibrary();
 
 module.exports = index;
