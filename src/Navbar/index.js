@@ -5,7 +5,7 @@ export default function Navbar({Children}) {
     let securedocURL = "https://demo-filestorage.selfguard.xyz";
     let custodyURL = "https://demo-custody.selfguard.xyz";
     let paymentURL = 'https://demo-payments.selfguard.xyz';
-    let notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakomoto%20Fan%20Club';
+    let notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakamoto%20Fan%20Club';
 
     return (
       <nav className="navbar sticky-top navbar-dark navbar-expand-lg bg-dark" style={{marginBottom:'20px',borderBottom:'1px solid grey'}}>

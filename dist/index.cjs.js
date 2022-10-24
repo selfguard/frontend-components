@@ -19,7 +19,7 @@ function Navbar$1() {
   var securedocURL = "https://demo-filestorage.selfguard.xyz";
   var custodyURL = "https://demo-custody.selfguard.xyz";
   var paymentURL = 'https://demo-payments.selfguard.xyz';
-  var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakomoto%20Fan%20Club';
+  var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakamoto%20Fan%20Club';
   return /*#__PURE__*/React__default["default"].createElement("footer", {
     className: "bd-footer py-4 mt-5 bg-light"
   }, /*#__PURE__*/React__default["default"].createElement("div", {
@@ -129,7 +129,7 @@ function Navbar(_ref) {
   var securedocURL = "https://demo-filestorage.selfguard.xyz";
   var custodyURL = "https://demo-custody.selfguard.xyz";
   var paymentURL = 'https://demo-payments.selfguard.xyz';
-  var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakomoto%20Fan%20Club';
+  var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakamoto%20Fan%20Club';
   return /*#__PURE__*/React__default["default"].createElement("nav", {
     className: "navbar sticky-top navbar-dark navbar-expand-lg bg-dark",
     style: {

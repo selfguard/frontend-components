@@ -5,7 +5,7 @@ export default function Navbar() {
     let securedocURL = "https://demo-filestorage.selfguard.xyz";
     let custodyURL = "https://demo-custody.selfguard.xyz";
     let paymentURL = 'https://demo-payments.selfguard.xyz';
-    let notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakomoto%20Fan%20Club';
+    let notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakamoto%20Fan%20Club';
     return (
       <footer className="bd-footer py-4 mt-5 bg-light">
         <div className="container py-4 px-4 px-md-3">
