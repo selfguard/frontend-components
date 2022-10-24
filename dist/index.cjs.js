@@ -19,6 +19,7 @@ function Navbar$1() {
   var securedocURL = "https://demo-filestorage.selfguard.xyz";
   var custodyURL = "https://demo-custody.selfguard.xyz";
   var paymentURL = 'https://demo-payments.selfguard.xyz';
+  var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakomoto%20Fan%20Club';
   return /*#__PURE__*/React__default["default"].createElement("footer", {
     className: "bd-footer py-4 mt-5 bg-light"
   }, /*#__PURE__*/React__default["default"].createElement("div", {
@@ -74,6 +75,14 @@ function Navbar$1() {
       color: 'black',
       textDecoration: 'none'
     },
+    href: notificationsURL
+  }, "Notifications")), /*#__PURE__*/React__default["default"].createElement("li", {
+    className: "mb-1"
+  }, /*#__PURE__*/React__default["default"].createElement("a", {
+    style: {
+      color: 'black',
+      textDecoration: 'none'
+    },
     href: paymentURL
   }, "Payments")), /*#__PURE__*/React__default["default"].createElement("li", {
     className: "mb-1"
@@ -120,7 +129,7 @@ function Navbar(_ref) {
   var securedocURL = "https://demo-filestorage.selfguard.xyz";
   var custodyURL = "https://demo-custody.selfguard.xyz";
   var paymentURL = 'https://demo-payments.selfguard.xyz';
-  var notificationsURL = 'https://demo-notifications.selfguard.xyz';
+  var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakomoto%20Fan%20Club';
   return /*#__PURE__*/React__default["default"].createElement("nav", {
     className: "navbar sticky-top navbar-dark navbar-expand-lg bg-dark",
     style: {
@@ -487,8 +496,23 @@ function getWebsiteDomain() {
   return websiteUrl;
 }
 
+var copy = function copy(text) {
+  var textField = document.createElement('textarea');
+  textField.innerText = text;
+  document.body.appendChild(textField);
+  textField.select();
+  document.execCommand('copy');
+  textField.remove();
+  Toastify({
+    text: "Copied",
+    style: {
+      background: "linear-gradient(to right, #198754, #198751"
+    }
+  }).showToast();
+};
 var returnLibrary = function returnLibrary() {
   return {
+    copy: copy,
     SuperTokensOptions: SuperTokensOptions,
     getApiDomain: getApiDomain,
     getWebsiteDomain: getWebsiteDomain,

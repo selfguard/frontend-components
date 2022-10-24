@@ -5,7 +5,7 @@ export default function Navbar() {
     let securedocURL = "https://demo-filestorage.selfguard.xyz";
     let custodyURL = "https://demo-custody.selfguard.xyz";
     let paymentURL = 'https://demo-payments.selfguard.xyz';
-
+    let notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakomoto%20Fan%20Club';
     return (
       <footer className="bd-footer py-4 mt-5 bg-light">
         <div className="container py-4 px-4 px-md-3">
@@ -24,6 +24,7 @@ export default function Navbar() {
               <ul className="list-unstyled">
                 <li className="mb-1"><a href="https://selfguard.xyz/home" style={{color:'black',textDecoration:'none'}}>Home</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={apiURL}>API</a></li>
+                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={notificationsURL}>Notifications</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={paymentURL}>Payments</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={custodyURL}>Custody</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={securedocURL}>File Storage</a></li>
