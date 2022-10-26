@@ -14,14 +14,12 @@
 
     function Navbar$1() {
       var apiURL = "https://selfguard.xyz/api";
-      var securedocURL = "https://demo-filestorage.selfguard.xyz";
-      var custodyURL = "https://demo-custody.selfguard.xyz";
-      var paymentURL = 'https://demo-payments.selfguard.xyz';
-      var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakamoto%20Fan%20Club';
+      var paymentURL = 'https://docs.selfguard.xyz';
+      var notificationsURL = 'https://getnotified.xyz/';
       return /*#__PURE__*/React__default["default"].createElement("footer", {
-        className: "bd-footer py-4 mt-5 bg-light"
+        className: "bd-footer py-4 mt-2 bg-light"
       }, /*#__PURE__*/React__default["default"].createElement("div", {
-        className: "container py-4 px-4 px-md-3"
+        className: "container py-4 px-4 mt-2 px-md-3"
       }, /*#__PURE__*/React__default["default"].createElement("div", {
         className: "row"
       }, /*#__PURE__*/React__default["default"].createElement("div", {
@@ -46,7 +44,7 @@
         className: "list-unstyled small text-muted"
       }, /*#__PURE__*/React__default["default"].createElement("li", {
         className: "mb-2"
-      }, "Universal API for Encryption and Tokenization"))), /*#__PURE__*/React__default["default"].createElement("div", {
+      }, "Encryption Modules & Tooling"))), /*#__PURE__*/React__default["default"].createElement("div", {
         className: "col-6 col-lg-2 offset-lg-1 mb-3"
       }, /*#__PURE__*/React__default["default"].createElement("h5", null, "Links"), /*#__PURE__*/React__default["default"].createElement("ul", {
         className: "list-unstyled"
@@ -66,7 +64,7 @@
           textDecoration: 'none'
         },
         href: apiURL
-      }, "API")), /*#__PURE__*/React__default["default"].createElement("li", {
+      }, "Docs")), /*#__PURE__*/React__default["default"].createElement("li", {
         className: "mb-1"
       }, /*#__PURE__*/React__default["default"].createElement("a", {
         style: {
@@ -82,22 +80,6 @@
           textDecoration: 'none'
         },
         href: paymentURL
-      }, "Payments")), /*#__PURE__*/React__default["default"].createElement("li", {
-        className: "mb-1"
-      }, /*#__PURE__*/React__default["default"].createElement("a", {
-        style: {
-          color: 'black',
-          textDecoration: 'none'
-        },
-        href: custodyURL
-      }, "Custody")), /*#__PURE__*/React__default["default"].createElement("li", {
-        className: "mb-1"
-      }, /*#__PURE__*/React__default["default"].createElement("a", {
-        style: {
-          color: 'black',
-          textDecoration: 'none'
-        },
-        href: securedocURL
       }, "File Storage")))), /*#__PURE__*/React__default["default"].createElement("div", {
         className: "col-6 col-lg-2 mb-3"
       }, /*#__PURE__*/React__default["default"].createElement("h5", null, "Community"), /*#__PURE__*/React__default["default"].createElement("ul", {
@@ -117,7 +99,7 @@
           color: 'black',
           textDecoration: 'none'
         },
-        href: 'https://twitter.com/selfguardxyz'
+        href: 'https://twitter.com/selfguard_xyz'
       }, "Twitter")))))));
     }
 
