@@ -15,8 +15,8 @@ var _objectWithoutProperties__default = /*#__PURE__*/_interopDefaultLegacy(_obje
 var _regeneratorRuntime__default = /*#__PURE__*/_interopDefaultLegacy(_regeneratorRuntime);
 
 function Navbar$1() {
-  var apiURL = "https://selfguard.xyz/api";
-  var paymentURL = 'https://docs.selfguard.xyz';
+  var docsURL = 'https://docs.selfguard.xyz';
+  var fileURL = 'https://demo-filestorage.xyz';
   var notificationsURL = 'https://getnotified.xyz/';
   return /*#__PURE__*/React__default["default"].createElement("footer", {
     className: "bd-footer py-4 mt-2 bg-light"
@@ -46,7 +46,7 @@ function Navbar$1() {
     className: "list-unstyled small text-muted"
   }, /*#__PURE__*/React__default["default"].createElement("li", {
     className: "mb-2"
-  }, "Encryption Modules & Tooling"))), /*#__PURE__*/React__default["default"].createElement("div", {
+  }, "Universal Encryption Modules & APIs"))), /*#__PURE__*/React__default["default"].createElement("div", {
     className: "col-6 col-lg-2 offset-lg-1 mb-3"
   }, /*#__PURE__*/React__default["default"].createElement("h5", null, "Links"), /*#__PURE__*/React__default["default"].createElement("ul", {
     className: "list-unstyled"
@@ -65,7 +65,7 @@ function Navbar$1() {
       color: 'black',
       textDecoration: 'none'
     },
-    href: apiURL
+    href: docsURL
   }, "Docs")), /*#__PURE__*/React__default["default"].createElement("li", {
     className: "mb-1"
   }, /*#__PURE__*/React__default["default"].createElement("a", {
@@ -81,7 +81,7 @@ function Navbar$1() {
       color: 'black',
       textDecoration: 'none'
     },
-    href: paymentURL
+    href: fileURL
   }, "File Storage")))), /*#__PURE__*/React__default["default"].createElement("div", {
     className: "col-6 col-lg-2 mb-3"
   }, /*#__PURE__*/React__default["default"].createElement("h5", null, "Community"), /*#__PURE__*/React__default["default"].createElement("ul", {

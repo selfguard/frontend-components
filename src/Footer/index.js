@@ -2,7 +2,8 @@ import React from 'react';
 
 export default function Navbar() {
     let apiURL = "https://selfguard.xyz/api";
-    let paymentURL = 'https://docs.selfguard.xyz';
+    let docsURL = 'https://docs.selfguard.xyz';
+    let fileURL = 'https://demo-filestorage.xyz';
     let notificationsURL = 'https://getnotified.xyz/';
     return (
       <footer className="bd-footer py-4 mt-2 bg-light">
@@ -14,16 +15,16 @@ export default function Navbar() {
                  <h5 className="d-inline-block" style={{margin:0,marginLeft:'5px',color:'black'}}><b>SelfGuard</b></h5>
               </a>
               <ul className="list-unstyled small text-muted">
-                <li className="mb-2">Encryption Modules & Tooling</li>
+                <li className="mb-2">Universal Encryption Modules & APIs</li>
               </ul>
             </div>
             <div className="col-6 col-lg-2 offset-lg-1 mb-3">
               <h5>Links</h5>
               <ul className="list-unstyled">
-                <li className="mb-1"><a href="https://selfguard.xyz/home" style={{color:'black',textDecoration:'none'}}>Home</a></li>
-                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={apiURL}>Docs</a></li>
+                <li className="mb-1"><a href={"https://selfguard.xyz/home"} style={{color:'black',textDecoration:'none'}}>Home</a></li>
+                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={docsURL}>Docs</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={notificationsURL}>Notifications</a></li>
-                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={paymentURL}>File Storage</a></li>
+                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={fileURL}>File Storage</a></li>
               </ul>
             </div>
             <div className="col-6 col-lg-2 mb-3">
