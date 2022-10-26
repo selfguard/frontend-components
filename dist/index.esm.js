@@ -6,7 +6,7 @@ import _regeneratorRuntime from '@babel/runtime/regenerator';
 
 function Navbar$1() {
   var docsURL = 'https://docs.selfguard.xyz';
-  var fileURL = 'https://demo-filestorage.xyz';
+  var fileURL = 'https://demo-filestorage.selfguard.xyz';
   var notificationsURL = 'https://getnotified.xyz/';
   return /*#__PURE__*/React.createElement("footer", {
     className: "bd-footer py-4 mt-2 bg-light"

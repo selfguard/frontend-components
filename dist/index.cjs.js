@@ -16,7 +16,7 @@ var _regeneratorRuntime__default = /*#__PURE__*/_interopDefaultLegacy(_regenerat
 
 function Navbar$1() {
   var docsURL = 'https://docs.selfguard.xyz';
-  var fileURL = 'https://demo-filestorage.xyz';
+  var fileURL = 'https://demo-filestorage.selfguard.xyz';
   var notificationsURL = 'https://getnotified.xyz/';
   return /*#__PURE__*/React__default["default"].createElement("footer", {
     className: "bd-footer py-4 mt-2 bg-light"

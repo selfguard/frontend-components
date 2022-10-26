@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navbar() {
     let apiURL = "https://selfguard.xyz/api";
     let docsURL = 'https://docs.selfguard.xyz';
-    let fileURL = 'https://demo-filestorage.xyz';
+    let fileURL = 'https://demo-filestorage.selfguard.xyz';
     let notificationsURL = 'https://getnotified.xyz/';
     return (
       <footer className="bd-footer py-4 mt-2 bg-light">
