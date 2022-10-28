@@ -1,16 +1,15 @@
 import React from 'react';
 
 export default function Navbar({Children}) {
-    let apiURL = "https://selfguard.xyz/api";
+    let homeURL = "https://selfguard.xyz/home";
     let securedocURL = "https://demo-filestorage.selfguard.xyz";
-    let custodyURL = "https://demo-custody.selfguard.xyz";
-    let paymentURL = 'https://demo-payments.selfguard.xyz';
-    let notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakamoto%20Fan%20Club';
+    let docsURL = 'https://docs.selfguard.xyz';
+    let notificationsURL = 'https://getnotified.xyz';
 
     return (
       <nav className="navbar sticky-top navbar-dark navbar-expand-lg bg-dark" style={{marginBottom:'20px',borderBottom:'1px solid grey'}}>
         <div className="container-fluid">
-          <a href="https://selfguard.xyz/home" className="navbar-brand mb-0 h1 vertical">
+          <a href="https://selfguard.xyz/" className="navbar-brand mb-0 h1 vertical">
           <img src="/logo3.png" width="30" height="30" className="d-inline-block" alt=""/>
            <p className="d-inline-block" style={{margin:0,marginLeft:'5px'}}>SelfGuard</p>
           </a>
@@ -20,27 +19,16 @@ export default function Navbar({Children}) {
            <div className="collapse navbar-collapse" id="navbarSupportedContent">
            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
              <li className="nav-item">
-               <a className={`nav-link ${'/api' === window.location.pathname && 'active'}`} href={apiURL}>API</a>
+               <a className={`nav-link`} href={homeURL}>Home</a>
              </li>
-             <li className="nav-item dropdown" style={{minWidth:'280px'}}>
-               <div className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Demos
-               </div>
-               <ul className="dropdown-menu">
-                 <li><a className="dropdown-item vertical4" href={notificationsURL}>
-                 <i className="bi bi-bell" style={{marginRight:'10px'}}></i>
-                 Notifications (web3)</a></li>
-                 <li><a className="dropdown-item vertical4" href={securedocURL}>
-                 <i className="bi bi-file-lock" style={{marginRight:'10px'}}></i>
-                 File Storage (web2/3)</a></li>
-                 <li><a className="dropdown-item vertical4" href={custodyURL}>
-                 <i className="bi bi-key" style={{marginRight:'10px'}}></i>
-                 Custody (web3)</a></li>
-                 <li><a className="dropdown-item vertical4" href={paymentURL}>
-                 <i className="bi bi-credit-card" style={{marginRight:'10px'}}></i>
-                 Payments (web2/3)
-                 </a></li>
-               </ul>
+             <li className="nav-item">
+               <a className={`nav-link`} href={notificationsURL}> Notifications</a>
+             </li>
+             <li className="nav-item">
+               <a className={`nav-link`} href={securedocURL}> File Storage</a>
+             </li>
+             <li className="nav-item">
+               <a className={`nav-link`} href={docsURL}>Docs</a>
              </li>
            </ul>
 

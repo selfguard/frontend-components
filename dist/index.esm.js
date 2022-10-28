@@ -97,11 +97,10 @@ function Navbar$1() {
 
 function Navbar(_ref) {
   var Children = _ref.Children;
-  var apiURL = "https://selfguard.xyz/api";
+  var homeURL = "https://selfguard.xyz/home";
   var securedocURL = "https://demo-filestorage.selfguard.xyz";
-  var custodyURL = "https://demo-custody.selfguard.xyz";
-  var paymentURL = 'https://demo-payments.selfguard.xyz';
-  var notificationsURL = 'https://getnotified.xyz/Satoshi%20Nakamoto%20Fan%20Club';
+  var docsURL = 'https://docs.selfguard.xyz';
+  var notificationsURL = 'https://getnotified.xyz';
   return /*#__PURE__*/React.createElement("nav", {
     className: "navbar sticky-top navbar-dark navbar-expand-lg bg-dark",
     style: {
@@ -111,7 +110,7 @@ function Navbar(_ref) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "container-fluid"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://selfguard.xyz/home",
+    href: "https://selfguard.xyz/",
     className: "navbar-brand mb-0 h1 vertical"
   }, /*#__PURE__*/React.createElement("img", {
     src: "/logo3.png",
@@ -143,53 +142,24 @@ function Navbar(_ref) {
   }, /*#__PURE__*/React.createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/React.createElement("a", {
-    className: "nav-link ".concat('/api' === window.location.pathname && 'active'),
-    href: apiURL
-  }, "API")), /*#__PURE__*/React.createElement("li", {
-    className: "nav-item dropdown",
-    style: {
-      minWidth: '280px'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "nav-link dropdown-toggle",
-    role: "button",
-    "data-bs-toggle": "dropdown",
-    "aria-expanded": "false"
-  }, "Demos"), /*#__PURE__*/React.createElement("ul", {
-    className: "dropdown-menu"
-  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dropdown-item vertical4",
+    className: "nav-link",
+    href: homeURL
+  }, "Home")), /*#__PURE__*/React.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "nav-link",
     href: notificationsURL
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "bi bi-bell",
-    style: {
-      marginRight: '10px'
-    }
-  }), "Notifications (web3)")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dropdown-item vertical4",
+  }, " Notifications")), /*#__PURE__*/React.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "nav-link",
     href: securedocURL
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "bi bi-file-lock",
-    style: {
-      marginRight: '10px'
-    }
-  }), "File Storage (web2/3)")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dropdown-item vertical4",
-    href: custodyURL
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "bi bi-key",
-    style: {
-      marginRight: '10px'
-    }
-  }), "Custody (web3)")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dropdown-item vertical4",
-    href: paymentURL
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "bi bi-credit-card",
-    style: {
-      marginRight: '10px'
-    }
-  }), "Payments (web2/3)"))))), /*#__PURE__*/React.createElement("ul", {
+  }, " File Storage")), /*#__PURE__*/React.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "nav-link",
+    href: docsURL
+  }, "Docs"))), /*#__PURE__*/React.createElement("ul", {
     className: "navbar-nav"
   }, /*#__PURE__*/React.createElement("li", {
     className: "nav-item vertical",
