@@ -12,8 +12,13 @@ let copy = (text) => {
   Toastify({text:"Copied",style: {background: "linear-gradient(to right, #198754, #198751"}}).showToast();
 }
 
+let signUpURL = (redirect_to) => {
+  return `https://us11.list-manage.com/contact-form?u=1684d49f48ea157c3bfc3fa52&form_id=0bf9e9f5ed5c0e6454564cce7e60bb0f`
+}
+
 const returnLibrary = () => {
   return {
+    signUpURL,
     copy,
     SuperTokensOptions,
     getApiDomain,
