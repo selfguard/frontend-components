@@ -63,14 +63,6 @@
           color: 'black',
           textDecoration: 'none'
         },
-        href: docsURL
-      }, "Docs")), /*#__PURE__*/React__default["default"].createElement("li", {
-        className: "mb-1"
-      }, /*#__PURE__*/React__default["default"].createElement("a", {
-        style: {
-          color: 'black',
-          textDecoration: 'none'
-        },
         href: notificationsURL
       }, "Notifications")), /*#__PURE__*/React__default["default"].createElement("li", {
         className: "mb-1"
@@ -80,7 +72,15 @@
           textDecoration: 'none'
         },
         href: fileURL
-      }, "File Storage")))), /*#__PURE__*/React__default["default"].createElement("div", {
+      }, "File Storage")), /*#__PURE__*/React__default["default"].createElement("li", {
+        className: "mb-1"
+      }, /*#__PURE__*/React__default["default"].createElement("a", {
+        style: {
+          color: 'black',
+          textDecoration: 'none'
+        },
+        href: docsURL
+      }, "Docs")))), /*#__PURE__*/React__default["default"].createElement("div", {
         className: "col-6 col-lg-2 mb-3"
       }, /*#__PURE__*/React__default["default"].createElement("h5", null, "Community"), /*#__PURE__*/React__default["default"].createElement("ul", {
         className: "list-unstyled"

@@ -22,9 +22,9 @@ export default function Navbar() {
               <h5>Links</h5>
               <ul className="list-unstyled">
                 <li className="mb-1"><a href={"https://selfguard.xyz/home"} style={{color:'black',textDecoration:'none'}}>Home</a></li>
-                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={docsURL}>Docs</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={notificationsURL}>Notifications</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={fileURL}>File Storage</a></li>
+                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={docsURL}>Docs</a></li>
               </ul>
             </div>
             <div className="col-6 col-lg-2 mb-3">
