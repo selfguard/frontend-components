@@ -49,6 +49,9 @@ export default function Navbar() {
                 <li className="mb-1">
                   <a style={{color:'black',textDecoration:'none'}} href={'https://app.termly.io/document/cookie-policy/1b28274a-65b0-4fb4-89f1-60230f31a6d3'}>Cookie Policy</a>
                 </li>
+                <li className="mb-1">
+                  <a style={{color:'black',textDecoration:'none'}} href={'https://app.termly.io/document/disclaimer/00405874-383c-4ee6-a389-8ee50c0ae507'}>Disclaimer</a>
+                </li>
               </ul>
             </div>
           </div>
