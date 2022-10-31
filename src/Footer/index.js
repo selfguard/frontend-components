@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Navbar() {
-    let apiURL = "https://selfguard.xyz/api";
     let docsURL = 'https://docs.selfguard.xyz';
     let fileURL = 'https://demo-filestorage.selfguard.xyz';
     let notificationsURL = 'https://getnotified.xyz/';
@@ -35,6 +34,20 @@ export default function Navbar() {
                 </li>
                 <li className="mb-1">
                   <a style={{color:'black',textDecoration:'none'}} href={'https://twitter.com/selfguard_xyz'}>Twitter</a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-6 col-lg-2 mb-3">
+              <h5>Resources</h5>
+              <ul className="list-unstyled">
+                <li className="mb-1">
+                  <a style={{color:'black',textDecoration:'none'}} href={'https://app.termly.io/document/terms-of-use-for-saas/41431ed0-b5e0-40ae-86b1-7d3574dbc7a9'}>Terms & Conditions</a>
+                </li>
+                <li className="mb-1">
+                  <a style={{color:'black',textDecoration:'none'}} href={'https://app.termly.io/document/privacy-policy/5f00313b-9c18-49c4-84c1-13efea1cadd9'}>Privacy Policy</a>
+                </li>
+                <li className="mb-1">
+                  <a style={{color:'black',textDecoration:'none'}} href={'https://app.termly.io/document/cookie-policy/1b28274a-65b0-4fb4-89f1-60230f31a6d3'}>Cookie Policy</a>
                 </li>
               </ul>
             </div>

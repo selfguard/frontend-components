@@ -102,7 +102,35 @@ function Navbar$1() {
       textDecoration: 'none'
     },
     href: 'https://twitter.com/selfguard_xyz'
-  }, "Twitter")))))));
+  }, "Twitter")))), /*#__PURE__*/React__default["default"].createElement("div", {
+    className: "col-6 col-lg-2 mb-3"
+  }, /*#__PURE__*/React__default["default"].createElement("h5", null, "Resources"), /*#__PURE__*/React__default["default"].createElement("ul", {
+    className: "list-unstyled"
+  }, /*#__PURE__*/React__default["default"].createElement("li", {
+    className: "mb-1"
+  }, /*#__PURE__*/React__default["default"].createElement("a", {
+    style: {
+      color: 'black',
+      textDecoration: 'none'
+    },
+    href: 'https://app.termly.io/document/terms-of-use-for-saas/41431ed0-b5e0-40ae-86b1-7d3574dbc7a9'
+  }, "Terms & Conditions")), /*#__PURE__*/React__default["default"].createElement("li", {
+    className: "mb-1"
+  }, /*#__PURE__*/React__default["default"].createElement("a", {
+    style: {
+      color: 'black',
+      textDecoration: 'none'
+    },
+    href: 'https://app.termly.io/document/privacy-policy/5f00313b-9c18-49c4-84c1-13efea1cadd9'
+  }, "Privacy Policy")), /*#__PURE__*/React__default["default"].createElement("li", {
+    className: "mb-1"
+  }, /*#__PURE__*/React__default["default"].createElement("a", {
+    style: {
+      color: 'black',
+      textDecoration: 'none'
+    },
+    href: 'https://app.termly.io/document/cookie-policy/1b28274a-65b0-4fb4-89f1-60230f31a6d3'
+  }, "Cookie Policy")))))));
 }
 
 function Navbar(_ref) {
