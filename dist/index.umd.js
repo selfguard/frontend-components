@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('@babel/runtime/helpers/defineProperty'), require('@babel/runtime/helpers/asyncToGenerator'), require('@babel/runtime/helpers/objectWithoutProperties'), require('@babel/runtime/regenerator')) :
-    typeof define === 'function' && define.amd ? define(['react', '@babel/runtime/helpers/defineProperty', '@babel/runtime/helpers/asyncToGenerator', '@babel/runtime/helpers/objectWithoutProperties', '@babel/runtime/regenerator'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global["react-awesome-buttons"] = factory(global.React, global._defineProperty, global._asyncToGenerator, global._objectWithoutProperties, global._regeneratorRuntime));
-})(this, (function (React, _defineProperty, _asyncToGenerator, _objectWithoutProperties, _regeneratorRuntime) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('@babel/runtime/helpers/defineProperty'), require('@babel/runtime/helpers/asyncToGenerator'), require('@babel/runtime/helpers/objectWithoutProperties'), require('@babel/runtime/regenerator'), require('toastify-js')) :
+    typeof define === 'function' && define.amd ? define(['react', '@babel/runtime/helpers/defineProperty', '@babel/runtime/helpers/asyncToGenerator', '@babel/runtime/helpers/objectWithoutProperties', '@babel/runtime/regenerator', 'toastify-js'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global["react-awesome-buttons"] = factory(global.React, global._defineProperty, global._asyncToGenerator, global._objectWithoutProperties, global._regeneratorRuntime, global.Toastify));
+})(this, (function (React, _defineProperty, _asyncToGenerator, _objectWithoutProperties, _regeneratorRuntime, Toastify) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -11,6 +11,7 @@
     var _asyncToGenerator__default = /*#__PURE__*/_interopDefaultLegacy(_asyncToGenerator);
     var _objectWithoutProperties__default = /*#__PURE__*/_interopDefaultLegacy(_objectWithoutProperties);
     var _regeneratorRuntime__default = /*#__PURE__*/_interopDefaultLegacy(_regeneratorRuntime);
+    var Toastify__default = /*#__PURE__*/_interopDefaultLegacy(Toastify);
 
     function Navbar$1() {
       var docsURL = 'https://docs.selfguard.xyz';
@@ -489,7 +490,7 @@
       textField.select();
       document.execCommand('copy');
       textField.remove();
-      Toastify({
+      Toastify__default["default"]({
         text: "Copied",
         style: {
           background: "linear-gradient(to right, #198754, #198751"

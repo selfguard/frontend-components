@@ -3,6 +3,7 @@ import _defineProperty from '@babel/runtime/helpers/defineProperty';
 import _asyncToGenerator from '@babel/runtime/helpers/asyncToGenerator';
 import _objectWithoutProperties from '@babel/runtime/helpers/objectWithoutProperties';
 import _regeneratorRuntime from '@babel/runtime/regenerator';
+import Toastify from 'toastify-js';
 
 function Navbar$1() {
   var docsURL = 'https://docs.selfguard.xyz';

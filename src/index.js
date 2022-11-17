@@ -1,6 +1,7 @@
 import Footer from './Footer/index.js';
 import Navbar from './Navbar/index.js';
 import {SuperTokensOptions, getApiDomain, getWebsiteDomain} from './SuperTokens/index.js';
+import Toastify from 'toastify-js'
 
 let copy = (text) => {
   var textField = document.createElement('textarea')

@@ -5,6 +5,7 @@ var _defineProperty = require('@babel/runtime/helpers/defineProperty');
 var _asyncToGenerator = require('@babel/runtime/helpers/asyncToGenerator');
 var _objectWithoutProperties = require('@babel/runtime/helpers/objectWithoutProperties');
 var _regeneratorRuntime = require('@babel/runtime/regenerator');
+var Toastify = require('toastify-js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -13,6 +14,7 @@ var _defineProperty__default = /*#__PURE__*/_interopDefaultLegacy(_definePropert
 var _asyncToGenerator__default = /*#__PURE__*/_interopDefaultLegacy(_asyncToGenerator);
 var _objectWithoutProperties__default = /*#__PURE__*/_interopDefaultLegacy(_objectWithoutProperties);
 var _regeneratorRuntime__default = /*#__PURE__*/_interopDefaultLegacy(_regeneratorRuntime);
+var Toastify__default = /*#__PURE__*/_interopDefaultLegacy(Toastify);
 
 function Navbar$1() {
   var docsURL = 'https://docs.selfguard.xyz';
@@ -491,7 +493,7 @@ var copy = function copy(text) {
   textField.select();
   document.execCommand('copy');
   textField.remove();
-  Toastify({
+  Toastify__default["default"]({
     text: "Copied",
     style: {
       background: "linear-gradient(to right, #198754, #198751"
