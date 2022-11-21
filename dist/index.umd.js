@@ -15,7 +15,7 @@
 
     function Navbar$1() {
       var docsURL = 'https://docs.selfguard.xyz';
-      var fileURL = 'https://demo-filestorage.selfguard.xyz';
+      var fileURL = 'https://filepeer.xyz';
       var notificationsURL = 'https://getnotified.xyz/';
       return /*#__PURE__*/React__default["default"].createElement("footer", {
         className: "bd-footer py-4 mt-2 bg-light"
@@ -52,12 +52,12 @@
       }, /*#__PURE__*/React__default["default"].createElement("li", {
         className: "mb-1"
       }, /*#__PURE__*/React__default["default"].createElement("a", {
-        href: "https://selfguard.xyz/home",
+        href: "https://selfguard.xyz/",
         style: {
           color: 'black',
           textDecoration: 'none'
         }
-      }, "Home")), /*#__PURE__*/React__default["default"].createElement("li", {
+      }, "SelfGuard")), /*#__PURE__*/React__default["default"].createElement("li", {
         className: "mb-1"
       }, /*#__PURE__*/React__default["default"].createElement("a", {
         style: {
@@ -65,7 +65,7 @@
           textDecoration: 'none'
         },
         href: notificationsURL
-      }, "Notifications")), /*#__PURE__*/React__default["default"].createElement("li", {
+      }, "Get Notified")), /*#__PURE__*/React__default["default"].createElement("li", {
         className: "mb-1"
       }, /*#__PURE__*/React__default["default"].createElement("a", {
         style: {
@@ -73,7 +73,7 @@
           textDecoration: 'none'
         },
         href: fileURL
-      }, "File Storage")), /*#__PURE__*/React__default["default"].createElement("li", {
+      }, "File Peer")), /*#__PURE__*/React__default["default"].createElement("li", {
         className: "mb-1"
       }, /*#__PURE__*/React__default["default"].createElement("a", {
         style: {

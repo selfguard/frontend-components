@@ -7,7 +7,7 @@ import Toastify from 'toastify-js';
 
 function Navbar$1() {
   var docsURL = 'https://docs.selfguard.xyz';
-  var fileURL = 'https://demo-filestorage.selfguard.xyz';
+  var fileURL = 'https://filepeer.xyz';
   var notificationsURL = 'https://getnotified.xyz/';
   return /*#__PURE__*/React.createElement("footer", {
     className: "bd-footer py-4 mt-2 bg-light"
@@ -44,12 +44,12 @@ function Navbar$1() {
   }, /*#__PURE__*/React.createElement("li", {
     className: "mb-1"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://selfguard.xyz/home",
+    href: "https://selfguard.xyz/",
     style: {
       color: 'black',
       textDecoration: 'none'
     }
-  }, "Home")), /*#__PURE__*/React.createElement("li", {
+  }, "SelfGuard")), /*#__PURE__*/React.createElement("li", {
     className: "mb-1"
   }, /*#__PURE__*/React.createElement("a", {
     style: {
@@ -57,7 +57,7 @@ function Navbar$1() {
       textDecoration: 'none'
     },
     href: notificationsURL
-  }, "Notifications")), /*#__PURE__*/React.createElement("li", {
+  }, "Get Notified")), /*#__PURE__*/React.createElement("li", {
     className: "mb-1"
   }, /*#__PURE__*/React.createElement("a", {
     style: {
@@ -65,7 +65,7 @@ function Navbar$1() {
       textDecoration: 'none'
     },
     href: fileURL
-  }, "File Storage")), /*#__PURE__*/React.createElement("li", {
+  }, "File Peer")), /*#__PURE__*/React.createElement("li", {
     className: "mb-1"
   }, /*#__PURE__*/React.createElement("a", {
     style: {

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Navbar() {
     let docsURL = 'https://docs.selfguard.xyz';
-    let fileURL = 'https://demo-filestorage.selfguard.xyz';
+    let fileURL = 'https://filepeer.xyz';
     let notificationsURL = 'https://getnotified.xyz/';
     return (
       <footer className="bd-footer py-4 mt-2 bg-light">
@@ -20,9 +20,9 @@ export default function Navbar() {
             <div className="col-6 col-lg-2 offset-lg-1 mb-3">
               <h5>Links</h5>
               <ul className="list-unstyled">
-                <li className="mb-1"><a href={"https://selfguard.xyz/home"} style={{color:'black',textDecoration:'none'}}>Home</a></li>
-                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={notificationsURL}>Notifications</a></li>
-                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={fileURL}>File Storage</a></li>
+                <li className="mb-1"><a href={"https://selfguard.xyz/"} style={{color:'black',textDecoration:'none'}}>SelfGuard</a></li>
+                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={notificationsURL}>Get Notified</a></li>
+                <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={fileURL}>File Peer</a></li>
                 <li className="mb-1"><a style={{color:'black',textDecoration:'none'}} href={docsURL}>Docs</a></li>
               </ul>
             </div>
