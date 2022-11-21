@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Navbar({Children}) {
     let homeURL = "https://selfguard.xyz/home";
-    let securedocURL = "https://demo-filestorage.selfguard.xyz";
+    let securedocURL = "https://filepeer.xyz";
     let docsURL = 'https://docs.selfguard.xyz';
     let notificationsURL = 'https://getnotified.xyz';
 
@@ -22,10 +22,10 @@ export default function Navbar({Children}) {
                <a className={`nav-link`} href={homeURL}>Home</a>
              </li>
              <li className="nav-item">
-               <a className={`nav-link`} href={notificationsURL}> Notifications</a>
+               <a className={`nav-link`} href={notificationsURL}> Get Notified</a>
              </li>
              <li className="nav-item">
-               <a className={`nav-link`} href={securedocURL}> File Storage</a>
+               <a className={`nav-link`} href={securedocURL}> File Peer</a>
              </li>
              <li className="nav-item">
                <a className={`nav-link`} href={docsURL}>Docs</a>

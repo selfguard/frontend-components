@@ -135,7 +135,7 @@ function Navbar$1() {
 function Navbar(_ref) {
   var Children = _ref.Children;
   var homeURL = "https://selfguard.xyz/home";
-  var securedocURL = "https://demo-filestorage.selfguard.xyz";
+  var securedocURL = "https://filepeer.xyz";
   var docsURL = 'https://docs.selfguard.xyz';
   var notificationsURL = 'https://getnotified.xyz';
   return /*#__PURE__*/React.createElement("nav", {
@@ -186,12 +186,12 @@ function Navbar(_ref) {
   }, /*#__PURE__*/React.createElement("a", {
     className: "nav-link",
     href: notificationsURL
-  }, " Notifications")), /*#__PURE__*/React.createElement("li", {
+  }, " Get Notified")), /*#__PURE__*/React.createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/React.createElement("a", {
     className: "nav-link",
     href: securedocURL
-  }, " File Storage")), /*#__PURE__*/React.createElement("li", {
+  }, " File Peer")), /*#__PURE__*/React.createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/React.createElement("a", {
     className: "nav-link",
