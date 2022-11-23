@@ -501,7 +501,9 @@ var copy = function copy(text) {
   }).showToast();
 };
 var signUpURL = function signUpURL(redirect_to) {
-  return "https://us11.list-manage.com/contact-form?u=1684d49f48ea157c3bfc3fa52&form_id=0bf9e9f5ed5c0e6454564cce7e60bb0f";
+  if (!redirect_to) redirect_to = '/home';
+  // return `https://us11.list-manage.com/contact-form?u=1684d49f48ea157c3bfc3fa52&form_id=0bf9e9f5ed5c0e6454564cce7e60bb0f`
+  return 'https://selfguard.xyz/auth?redirectToPath=' + redirect_to;
 };
 var returnLibrary = function returnLibrary() {
   return {
